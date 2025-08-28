@@ -21,6 +21,7 @@ pub mod root;
 pub mod round;
 pub mod subtract;
 pub mod unequal;
+pub mod constant;
 
 pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
     let items: Vec<Arc<dyn NodeLogic>> = vec![
@@ -44,6 +45,7 @@ pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
         Arc::new(abs::AbsFloatNode::default()),
         Arc::new(pow::PowerFloatNode::default()),
         Arc::new(root::RootFloatNode::default()),
+        Arc::new(constant::ConstantFloatValue::default()),
     ];
 
     items
