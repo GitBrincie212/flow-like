@@ -19,6 +19,7 @@ pub mod random_range;
 pub mod root;
 pub mod subtract;
 pub mod unequal;
+pub mod constant;
 
 pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
     let items: Vec<Arc<dyn NodeLogic>> = vec![
@@ -40,6 +41,7 @@ pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
         Arc::new(modulo::ModuloIntegerNode::default()),
         Arc::new(pow::PowerIntegerNode::default()),
         Arc::new(root::RootIntegerNode::default()),
+        Arc::new(constant::ConstantIntegerValue::default()),
     ];
 
     items
