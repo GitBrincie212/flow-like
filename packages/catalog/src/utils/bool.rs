@@ -7,6 +7,7 @@ pub mod not;
 pub mod or;
 pub mod random;
 pub mod xor;
+pub mod constant;
 
 pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
     vec![
@@ -16,5 +17,6 @@ pub async fn register_functions() -> Vec<Arc<dyn NodeLogic>> {
         Arc::new(not::BoolNot::default()),
         Arc::new(xor::BoolXor::default()),
         Arc::new(random::RandomBoolNode::default()),
+        Arc::new(constant::ConstantBoolNode::default()),
     ]
 }
